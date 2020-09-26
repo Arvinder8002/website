@@ -1,3 +1,78 @@
-body{
-min-height:100vh;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+body{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: rgb(51, 31, 4);
+}
+
+
+header{
+min-height:100vh;
+background-image:linear-gradient(-135deg,rgba(201, 130, 0, 0.822) 50%,rgba(228, 186, 96, 0.678)), url(image.jpg);
+background-size: 100%;
+}
+
+header .nav{
+    display:flex;
+    justify-content: flex-end;
+}
+
+
+header .nav ul{
+    display:flex;
+    margin: 15px;
+    list-style-type: none;
+}
+header .nav ul li{
+    margin:0 30px;
+    text-transform: capitalize;
+}
+
+header a{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.3s;
+    }
+  
+    #scrollToTop{
+        position: fixed;
+        top: -100px;
+        right:40px;
+        height:45px;
+        width: 45px;
+        background-color: wheat;
+        border-radius: 50%;
+        box-shadow: 0 0 5px;
+        transition: 0.6s;
+       
+    }
+
+    #scrollToTop span{
+        font-size: 25px;
+        display: block;
+        height: 100%;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #scrollToTop.down{
+        top: 85%;
+    }
+    header a:hover{
+        text-shadow: 2.5px 2.5px 2px rgba(51, 31, 4, 0.651);
+    
+    }
+   
+
+    section{
+        min-height: 100vh;
+    }
+    

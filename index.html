@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porfolio website</title>
+    <title>Potfolio website</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="webstiteStyle.css">
     <script src="websiteScript.js" defer></script>
+
+
 </head>
 <body>
     <!-- header of the website -->
     <header id="home">
         <div class="nav">
-            <span>Porfolio</span>
+            <span>Portfolio</span>
             <ul>
-                <li> <a href="#home">home</a> </li>
+                <li><a href="">works</a></li>
+               <li><a href="">services</a></li>
                 <li><a href="">about</a></li>
-               <li><a href="">works</a></li>
-                <li><a href="">features</a></li>
                 <li><a href="#contact">contact</a></li>
                 <li id="theme"> theme
                     <div class="dropdown">
@@ -25,6 +27,14 @@
                 </li>
             </ul>
         </div>
+
+        <div class="intro">
+           
+                My name is <br><span>Arvinder Singh</span>
+                <br>I work as <div class="typing"></div>
+          
+      
+    </div>
     </header>
     <!-- scroll to the top button -->
     <div id="scrollToTop">
@@ -36,21 +46,35 @@
 
     <!-- footer of the website -->
     <footer id="contact">
-     <h3>contact me</h3>
+        <div class="heading">
+            <h3>contact me</h3>
+            <p>If you like my work then you can approach me</p>
+        </div>
+    
      <div class="content">
          <div class="form">
+            <span>you can message me</span>
             <form action="thanks.html">
-                <input type="text" name="uName" placeholder="Your Name">
-                <input type="email" name="uEmail" placeholder="Your Email">
-                <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="text" name="uName" placeholder="Your Name" required>
+                <input type="email" name="uEmail"   placeholder="Your Email" required>
+                <textarea name="message" cols="30" rows="10" required  placeholder="Message"></textarea>
                 <input type="submit" value="Send">
             </form>
          </div>
          <div class="others">
-             <h4>You Can Also Find Me On</h4>
+             <span>You Can Also Find Me On</span>
+             <div class="contactBox">
+                <div>instagram</div>
+                <div>facebook</div>
+                <div>discord</div>
+                <div>my email address is arvinder@gmail.com</div>
+             </div>
+             
          </div>
      </div>
-
+     <div class="quote">
+         <code>A  good programmer is someone who look always look both ways before crossing a one-way street <i>-Doug Linder</i></code>
+     </div>
     </footer>
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* global settings */
 :root{
     --gradientColor1:rgba(201, 130, 0, 0.822);
     --gradientColor2:rgba(228, 186, 96, 0.678);
@@ -16,16 +17,39 @@ a{
     text-decoration: none;
     color: var(--textColor);
 }
+/* finished working with global settings */
 
 
+/* header of the website */
 header{
 min-height:100vh;
 background-image:linear-gradient(-135deg,var(--gradientColor1) 50%,var(--gradientColor2)), url(image.jpg);
 background-size: 100%;
 padding-top: 10px;
-
+display:flex;
+flex-direction: column;
+justify-content: space-between;
+position: relative;
 }
 
+header .intro{
+    position: absolute;
+    top:50%;
+    left:30%;
+    transform:translateY(-50%);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color: var(--textColor);
+    flex-grow: 1;
+    justify-self: center;
+}
+
+header .intro span{
+    font-size: 45px;
+    display:inline-block;
+    margin-bottom: 18px;
+    font-weight: 599;
+}
 
 header .nav{
     display:flex;
@@ -45,6 +69,7 @@ header .nav ul{
     display:flex;
     list-style-type: none;
 }
+
 header .nav ul li{
     margin:0 20px;
     text-transform: capitalize;
@@ -54,51 +79,21 @@ header .nav ul li{
     transition: 0.2s;
 }
 
-#scrollToTop{
-    position: fixed;
-    top: -100px;
-    right:40px;
-    height:45px;
-    width: 45px;
-    background-color: wheat;
-    border-radius: 50%;
-    box-shadow: 0 0 5px;
-    transition: 0.5s;
-    
-}
-
-#scrollToTop span{
-    font-size: 25px;
-    display: block;
-    height: 100%;
-    width: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(51, 31, 4);
-}
-#scrollToTop.down{
-    top: 85%;
-}
 header li:hover{
     text-shadow: 2.5px 2.5px 2px rgba(51, 31, 4, 0.651);
 
 }
 
-
-section{
-    min-height: 100vh;
-}
-
 #theme{
     cursor: pointer;
-    margin: 0 0 0 20px;
+    margin: 0 40px 0 20px;
     color: var(--textColor);
 }
 
 #theme .dropdown{
     width: 120px;
-    margin-top: 8px;
+    position: absolute;
+    margin-top:8px;
     background-color: wheat;
     transform: translateX(-25px);
     height: 0;
@@ -146,14 +141,54 @@ section{
 #theme:hover .dropdown::after{
     opacity: 1;
 }
+/* finished working with the header of the website */
+
+
+/* scroll to top button */
+#scrollToTop{
+    position: fixed;
+    z-index: 10;
+    top: -100px;
+    right:40px;
+    height:45px;
+    width: 45px;
+    background-color: wheat;
+    border-radius: 50%;
+    box-shadow: 0 0 5px;
+    transition: 0.5s;
+    
+}
+
+#scrollToTop span{
+    font-size: 25px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(51, 31, 4);
+}
+#scrollToTop.down{
+    top: 85%;
+}
+/* finished working with scroll to top button */
+
+
+/* individual section setting */
+section{
+    min-height: 100vh;
+}
+
 
 /* footer styling */
 footer{
     min-height: 100vh;
     background-color: var(--footerBackground);
+    position: relative;
 }
 
-footer h3{
+.heading h3{
     text-align: center;
     padding-top: 15px;
     color: var(--textColor);
@@ -162,14 +197,102 @@ footer h3{
     font-family: 'Courier New', Courier, monospace;
 }
 
+.heading p{
+text-align: center;
+font-size: 17px;
+color: var(--textColor);
+margin-bottom: 35px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer{
+ display:flex;
+ flex-direction: column;
+ justify-content: space-between;
+
+}
+
 footer .content{
     display:flex;
     justify-content: space-around;
     align-items: center;
+    color: var(--textColor);
    
 }
 
 footer .content form{
     display:flex;
     flex-direction: column;
+    min-width: 60%;
+
 } 
+
+footer .content  span{
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer .content form input,textarea{
+    margin: 5px 0 20px 0;
+    width: 420px;
+    background-color: rgba(255, 255, 255,0.4);
+    padding:10px 15px;
+    border:none;
+    border-radius: 5px;
+    resize: none;
+}
+
+footer .content form input,textarea::placeholder{
+    color:var(--textColor);
+    font-size: 15px;
+}
+
+footer .content form input[type='submit']{
+    width: 90px;
+    align-self: flex-start;
+    background-color: rgb(97, 93, 85);
+    cursor: pointer;
+}
+
+footer .content form input[type='submit']:hover{
+ background-color: violet;
+ color:black
+}
+
+footer .others{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+
+footer .contactBox{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+footer .others div{
+   margin:20px 0 20px 20px;
+   font-size: 18px;
+   font-family: Arial, Helvetica, sans-serif;
+   text-transform: capitalize;
+
+   padding:10px;
+ 
+}
+footer .quote{
+    width: 95%;
+    font-size: 16px;
+    text-align: center;
+    margin:20px;
+    color:var(--textColor)
+}
+footer .quote i{
+    display:block;
+    text-align: end;
+    padding-right:60px;
+}
+/* finished working with footer styling */

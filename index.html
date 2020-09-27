@@ -11,12 +11,18 @@
     <!-- header of the website -->
     <header id="home">
         <div class="nav">
+            <span>Porfolio</span>
             <ul>
-                <li> <a href="">home</a> </li>
+                <li> <a href="#home">home</a> </li>
                 <li><a href="">about</a></li>
                <li><a href="">works</a></li>
                 <li><a href="">features</a></li>
-                <li><a href="">contact</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li id="theme"> theme
+                    <div class="dropdown">
+                        <span id="default">default</span><span id="dark">dark</span>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -27,5 +33,24 @@
     <section id="about"> 
 
     </section>
+
+    <!-- footer of the website -->
+    <footer id="contact">
+     <h3>contact me</h3>
+     <div class="content">
+         <div class="form">
+            <form action="thanks.html">
+                <input type="text" name="uName" placeholder="Your Name">
+                <input type="email" name="uEmail" placeholder="Your Email">
+                <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="submit" value="Send">
+            </form>
+         </div>
+         <div class="others">
+             <h4>You Can Also Find Me On</h4>
+         </div>
+     </div>
+
+    </footer>
 </body>
 </html>

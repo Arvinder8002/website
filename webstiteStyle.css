@@ -1,78 +1,175 @@
+:root{
+    --gradientColor1:rgba(201, 130, 0, 0.822);
+    --gradientColor2:rgba(228, 186, 96, 0.678);
+    --textColor:rgb(51, 31, 4);
+    --footerBackground:rgba(158, 103, 0, 0.922);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
     scroll-behavior: smooth;
 }
+
 a{
     text-decoration: none;
-    color: rgb(51, 31, 4);
+    color: var(--textColor);
 }
 
 
 header{
 min-height:100vh;
-background-image:linear-gradient(-135deg,rgba(201, 130, 0, 0.822) 50%,rgba(228, 186, 96, 0.678)), url(image.jpg);
+background-image:linear-gradient(-135deg,var(--gradientColor1) 50%,var(--gradientColor2)), url(image.jpg);
 background-size: 100%;
+padding-top: 10px;
+
 }
+
 
 header .nav{
     display:flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
+header .nav > span{
+    margin-left: 30px;
+    font-size: 35px;
+    color:var(--textColor);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
 
 header .nav ul{
     display:flex;
-    margin: 15px;
     list-style-type: none;
 }
 header .nav ul li{
-    margin:0 30px;
+    margin:0 20px;
     text-transform: capitalize;
-}
-
-header a{
     font-size: 20px;
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
-    transition: 0.3s;
-    }
-  
-    #scrollToTop{
-        position: fixed;
-        top: -100px;
-        right:40px;
-        height:45px;
-        width: 45px;
-        background-color: wheat;
-        border-radius: 50%;
-        box-shadow: 0 0 5px;
-        transition: 0.6s;
-       
-    }
+    transition: 0.2s;
+}
 
-    #scrollToTop span{
-        font-size: 25px;
-        display: block;
-        height: 100%;
-        width: 100%;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #scrollToTop.down{
-        top: 85%;
-    }
-    header a:hover{
-        text-shadow: 2.5px 2.5px 2px rgba(51, 31, 4, 0.651);
+#scrollToTop{
+    position: fixed;
+    top: -100px;
+    right:40px;
+    height:45px;
+    width: 45px;
+    background-color: wheat;
+    border-radius: 50%;
+    box-shadow: 0 0 5px;
+    transition: 0.5s;
     
-    }
+}
+
+#scrollToTop span{
+    font-size: 25px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(51, 31, 4);
+}
+#scrollToTop.down{
+    top: 85%;
+}
+header li:hover{
+    text-shadow: 2.5px 2.5px 2px rgba(51, 31, 4, 0.651);
+
+}
+
+
+section{
+    min-height: 100vh;
+}
+
+#theme{
+    cursor: pointer;
+    margin: 0 0 0 20px;
+    color: var(--textColor);
+}
+
+#theme .dropdown{
+    width: 120px;
+    margin-top: 8px;
+    background-color: wheat;
+    transform: translateX(-25px);
+    height: 0;
+    transition: 0.2s;
+}
+
+#theme .dropdown::after{
+   content: '';
+   position: absolute;
+   top:-4px;
+   left: 50%;
+   transform: translateX(-50%) rotate(45deg);
+   height: 10px;
+   width: 10px;
+   background-color:wheat;
+   opacity: 0;
    
+}
 
-    section{
-        min-height: 100vh;
-    }
-    
+#theme .dropdown span{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.1s;
+    color: rgb(58, 42, 12);
+    text-shadow: none;
+    height:50%;
+    padding-top: 5px;
+    text-transform: capitalize;
+}
+
+#theme:hover .dropdown{
+    height:60px;
+}
+
+#theme:hover .dropdown span{
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+#theme:hover .dropdown::after{
+    opacity: 1;
+}
+
+/* footer styling */
+footer{
+    min-height: 100vh;
+    background-color: var(--footerBackground);
+}
+
+footer h3{
+    text-align: center;
+    padding-top: 15px;
+    color: var(--textColor);
+    font-size: 30px;
+    text-transform: capitalize;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer .content{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+footer .content form{
+    display:flex;
+    flex-direction: column;
+} 

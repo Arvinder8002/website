@@ -20,6 +20,7 @@ body{
 a{
     text-decoration: none;
     color: var(--textColor);
+    transition: 0.3s;
 }
 /* finished working with global settings */
 
@@ -27,7 +28,7 @@ a{
 /* header of the website */
 header{
 min-height:100vh;
-background-image:linear-gradient(-135deg,var(--gradientColor1) 50%,var(--gradientColor2)), url(image.jpg);
+background-image:linear-gradient(135deg,var(--gradientColor1) 40%,var(--gradientColor2)), url(background.jpeg);
 background-size: cover;
 padding-top: 10px;
 display:flex;
@@ -39,9 +40,9 @@ position: relative;
 header .intro{
     position: absolute;
     top:50%;
-    left:25%;
+    left:10%;
     transform:translateY(-50%);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: unset;
     font-size: 30px;
     color: var(--textColor);
     flex-grow: 1;
@@ -53,7 +54,11 @@ header .intro span{
     display:inline-block;
     margin-bottom: 18px;
     font-weight: 600;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:  monospace;
+}
+header .intro h5{
+    font-family: monospace;
+    margin-left: 5px;
 }
 
 header .nav{
@@ -80,14 +85,13 @@ header .nav ul{
 header .nav ul li{
     margin:0 20px;
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
-    transition: 0.2s;
-    padding:5px;
+    padding:5px 10px;
 }
 
-header li:hover{
+header li:hover a{
     text-shadow: 2.5px 2.5px 2px rgba(51, 31, 4, 0.651);
 
 }
@@ -101,11 +105,11 @@ header .nav .lines{
     border-radius: 50%;
     display: none;
     position: relative;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 header .nav .lines:hover{
-    background-color: rgb(146, 95, 0);
+    background-color: var(--footerBackground);
 }
 
 header .nav .lines.fixed{
@@ -123,7 +127,7 @@ header .nav .background{
     z-index: 11;
     border-radius: 50%;
     transform: translate(-50%,-50%) scale(0);
-    transition: 0.8s;
+    transition: 0.4s;
 
 }
 
@@ -131,14 +135,14 @@ header .nav  .background.expand{
 
     height:1900px;
     width: 1900px;
-    background-color: rgb(146, 95, 0);
+    background-color: var(--footerBackground);
     transform: translate(-50%,-50%) scale(1);
 
 }
 
 header .nav .line{
     position: absolute;
-    top: 55%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%,-50%);
     height:3px;
@@ -168,7 +172,7 @@ header .nav .line.rotate{
 header .nav .line.rotate::after{
     content: '';
     transform-origin: bottom;
-    transform: rotate(90deg) translateX(8.5px);
+    transform: rotate(92deg) translateX(8.5px);
 }
 
 #theme{
@@ -300,12 +304,40 @@ opacity: 0;
 /* finished working with scroll to top button */
 
 
-/* individual section setting */
-section{
-    min-height: 100vh;
+/* about section setting */
+#about {
+padding: 0 35px;
+background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
 }
 
+#about .imgbox{
+    height: 300px;
+    width:300px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    min-width: 30%;
+    float: left;
+    margin-bottom: 10px;
+    shape-outside: circle(50%);
+     
+}
 
+#about .imgbox img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#about .txtbox{
+   padding:50px 20px;
+}
+
+#about .txtbox p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:var(--textColor);
+    margin: 10px;
+}
 /* footer styling */
 footer{
     min-height: 100vh;
@@ -334,10 +366,11 @@ footer{
  display:flex;
  flex-direction: column;
  justify-content: space-between;
+ clear: both;
 
 }
 
-footer .content{
+ footer .content{
     display:flex;
     justify-content: space-around;
     align-items: center;
@@ -423,7 +456,7 @@ footer .quote i{
 /* finished working with footer styling */
 
 /* responsive design */
-@media all and (max-width:900px)
+@media all and (max-width:950px)
 {
  header .nav ul{
      position:fixed;

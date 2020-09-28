@@ -68,8 +68,8 @@ function expand(){
  ul.classList.toggle('show');
  this.classList.toggle('fixed');
  line.classList.toggle('rotate');
- if(background.classList.contains('expand')) document.documentElement.style.overflow = 'hidden';
- else document.documentElement.style.overflow = 'auto';
+//  if(background.classList.contains('expand')) document.documentElement.style.overflow = 'hidden';
+//  else document.documentElement.style.overflow = 'auto';
 }
 
 lines.addEventListener('click',expand);

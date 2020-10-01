@@ -8,12 +8,17 @@ const lines = document.querySelector('.lines');
 const line = lines.querySelector('.line');
 const background = document.querySelector('.background');
 const ul = document.querySelector('header .nav ul');
+const cards = document.querySelectorAll('#services .card');
 
-//storing the previous theme settings
+//storing the previos theme settings
 if(location.reload)
 {
 
- 
+  root.style.setProperty('--gradientColor1',localStorage.getItem('--gradientColor1'));
+  root.style.setProperty('--gradientColor2',localStorage.getItem('--gradientColor2'));
+  root.style.setProperty('--textColor',localStorage.getItem('--textColor'));
+  root.style.setProperty('--footerBackground',localStorage.getItem('--footerBackground'));
+
 }
 
 //setting the theme of the website
@@ -23,6 +28,12 @@ defaultButton.addEventListener('click',()=>{
     root.style.setProperty('--textColor','rgb(51, 31, 4)');
     root.style.setProperty('--footerBackground','rgba(158, 103, 0, 0.922)');
 
+    localStorage.setItem('--gradientColor1','rgba(201, 130, 0, 0.822)');
+    localStorage.setItem('--gradientColor2','rgba(228, 186, 96, 0.678)');
+    localStorage.setItem('--textColor','rgb(51, 31, 4)');
+    localStorage.setItem('--footerBackground','rgba(158, 103, 0, 0.922)');
+    
+
 });
 
 darkButton.addEventListener('click',()=>{
@@ -30,7 +41,11 @@ darkButton.addEventListener('click',()=>{
   root.style.setProperty('--gradientColor2','rgba(29, 26, 26, 0.781)');
   root.style.setProperty('--textColor','wheat');
   root.style.setProperty('--footerBackground','rgba(22, 21, 21, 0.945)');
+  
   localStorage.setItem('--gradientColor1','rgba(0, 0, 0, 0.945)');
+  localStorage.setItem('--gradientColor2','rgba(29, 26, 26, 0.781)');
+  localStorage.setItem('--textColor','wheat');
+  localStorage.setItem('--footerBackground','rgba(22, 21, 21, 0.945)');  
   
 });
 
@@ -73,3 +88,5 @@ function expand(){
 }
 
 lines.addEventListener('click',expand);
+
+//rotating all cards according the card hovered in sevices section

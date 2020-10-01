@@ -22,6 +22,7 @@ a{
     color: var(--textColor);
     transition: 0.3s;
 }
+
 /* finished working with global settings */
 
 
@@ -56,6 +57,20 @@ header .intro span{
     font-weight: 600;
     font-family:  monospace;
 }
+header .intro a{
+    display: inline-block;
+    padding:5px 10px;
+    font-size: 20px;
+    margin-top: 20px;
+    border:2px solid var(--textColor);
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-family: sans-serif;
+}
+header .intro a:hover{
+    background-color: var(--textColor);
+    color:var(--gradientColor1);
+}
 header .intro h5{
     font-family: monospace;
     margin-left: 5px;
@@ -78,12 +93,14 @@ header .nav > span{
 
 header .nav ul{
     display:flex;
-    list-style-type: none;
-    
+    justify-content: space-evenly;
+    align-self: center;
+    flex-grow: 0.3;
+    list-style-type: none; 
 }
 
 header .nav ul li{
-    margin:0 20px;
+    
     text-transform: capitalize;
     font-size: 22px;
     font-weight: 500;
@@ -93,7 +110,6 @@ header .nav ul li{
 
 header li:hover a{
     text-shadow: 2.5px 2.5px 2px rgba(51, 31, 4, 0.651);
-
 }
 
 header .nav .lines{
@@ -106,10 +122,6 @@ header .nav .lines{
     display: none;
     position: relative;
     transition: 0.4s;
-}
-
-header .nav .lines:hover{
-    background-color: var(--footerBackground);
 }
 
 header .nav .lines.fixed{
@@ -128,16 +140,13 @@ header .nav .background{
     border-radius: 50%;
     transform: translate(-50%,-50%) scale(0);
     transition: 0.4s;
-
 }
 
 header .nav  .background.expand{
-
     height:1900px;
     width: 1900px;
     background-color: var(--footerBackground);
     transform: translate(-50%,-50%) scale(1);
-
 }
 
 header .nav .line{
@@ -152,7 +161,6 @@ header .nav .line{
     border-radius: 20px;
     position: relative;
     transition: 0.5s;
-   
 }
 
 header .nav .line::after{
@@ -201,7 +209,6 @@ header .nav .line.rotate::after{
    width: 10px;
    background-color:wheat;
    opacity: 0;
-   
 }
 
 #theme .dropdown span{
@@ -226,7 +233,6 @@ header .nav .line.rotate::after{
 #theme:hover .dropdown span{
     opacity: 1;
     pointer-events: all;
-
 }
 
 #theme:hover .dropdown::after{
@@ -254,7 +260,7 @@ header .typing::after{
 }
 
 @keyframes blink{
-0%{
+0%,100%{
 opacity: 0;
 }
 20%{
@@ -265,9 +271,6 @@ opacity: 0;
 }
 72%{
     opacity: 0;
-}
-100%{
-opacity: 0;
 }
 }
 /* finished working with the header of the website */
@@ -284,8 +287,7 @@ opacity: 0;
     background-color: wheat;
     border-radius: 50%;
     box-shadow: 0 0 5px;
-    transition: 0.5s;
-    
+    transition: 0.5s;  
 }
 
 #scrollToTop span{
@@ -340,15 +342,17 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
     padding:35px 100px;
 }
 #services .content{
-    transform-style: preserve-3d;
+    justify-content: space-around;
 }
 #services .card{
     position: relative;
     height:280px;
     width: 220px;
-    margin:20px 50px;
+    margin:20px 30px;
     flex-shrink: 0;
+    transition: 0.3s;
 }
+
 #services .card .face{
     position: absolute;
     top: 0;
@@ -360,11 +364,28 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
 }
 #services .card .face.face1{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgb(37, 145, 218);
     transform-origin: right;
     opacity: 1;
+}
+#services .card .face.face1 .imgbox{
+    height:100px;
+    width: 100px;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 0.2;
+}
+#services .card .face.face1 .imgbox img{
+    height: 100%;
+    width: 100%;
+}
+#services .card .face.face1 h4{
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
 }
 #services .card:hover .face.face1{
     transform:perspective(2000px) translateX(-100%) rotateY(-90deg);
@@ -394,11 +415,49 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
     border-radius: 2px;
     background-color: var(--footerBackground);
 }
+/* testimonial section styling */
+#testimonial{
+    padding:0 20px 40px 20px;
+    position: relative;
+    z-index: -3;
+}
+#testimonial .testimonial-card{
+  height:300px;
+  width: 400px;
+  background:white;
+  margin: 30px 5px;
+  padding: 10px 18px;
+  font-size: 16px;
+  text-align: justify;
+  font-family:arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+#testimonial .testimonial-card::after{
+    content: '';
+    position: absolute;
+    height: 302px;
+    width: 402px;
+    z-index: -1;
+    background-color: var(--textColor);
+    transform: skew(2deg,2deg);
+}
+#testimonial .testimonial-card span{
+    align-self: flex-end;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
 /* footer styling */
 footer{
     min-height: 100vh;
     background-color: var(--footerBackground);
     position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .heading h3{
@@ -418,19 +477,13 @@ margin-bottom: 35px;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-footer{
- display:flex;
- flex-direction: column;
- justify-content: space-between;
- clear: both;
-
-}
 
 .content{
     display:flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    align-content: center;
     color: var(--textColor);
 }
 
@@ -438,7 +491,6 @@ footer .content form{
     display:flex;
     flex-direction: column;
     min-width: 60%;
-
 } 
 
 footer .content  span{
@@ -486,7 +538,6 @@ footer .contactBox{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 footer .contactBox span{
     display: block;
@@ -524,7 +575,6 @@ footer .quote i{
      opacity: 0;
      pointer-events: none;
     transition-delay: 0; 
-
  }
  header .nav ul li{
      font-size: 30px;
@@ -538,15 +588,4 @@ footer .quote i{
  header .nav .lines{
      display:block;
  }
-
-}
-.test{
-    height:300px;
-    width: 300px;
-    background: red;
-    transition: 1s;
-    margin: 200px;
-}
-.test:hover{
-    transform:perspective(500px) rotatey(83deg);
 }

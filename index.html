@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potfolio website</title>
+    <link rel="stylesheet" href="icofont/icofont.min.css">
     <link rel="stylesheet" href="webstiteStyle.css">
     <script src="websiteScript.js" defer></script>
 
-
 </head>
 <body>
+    <div class="loader">
+      <div class="bar">
+          <h4>LOADING..</h4>
+      </div>
+    </div>
+   
     <!-- header of the website -->
     <header id="home">
         <div class="nav">
@@ -35,8 +41,8 @@
         <div class="intro">
            
                 My name is <br><span>Arvinder Singh</span>
-                <br>I work as <h5 class="typing"></h5><br>
-                <a href="#about">about me</a>
+               <br> I work as <h5 class="typing"></h5><br>
+                <a href="#about">about me</a>  <a href="#works">works</a>
     </div>
     </header>
     <!-- scroll to the top button -->
@@ -109,7 +115,7 @@
                         <div class="imgbox">
                             <img src="responsive-design-symbol.svg" alt="responsive-design-symbol">
                         </div>
-                        <h4>responsive designing</h4>
+                        <h4>responsive design</h4>
 
                 </div>
                 <div class="face face2">
@@ -150,7 +156,7 @@
                 <h3>here's what my recent clients think of me</h3>
             </div>
             <div class="content">
-                <div class="testimonial-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus vitae libero fugiat sunt explicabo veritatis odio labore tenetur nostrum Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis cupiditate perspiciatis animi quibusdam adipisci. Necessitatibus, non repellat. Culpa, atque veritatis. Voluptatem maxime at perferendis, porro pariatur neque distinctio odio minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, corporis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, natus! Qui maiores cumque obcaecati adipisci nulla error ex animi repellat. <span>-josh behrandoff</span></div>
+                <div class="testimonial-card"> Temporibus vitae libero fugiat sunt explicabo veritatis odio labore tenetur nostrum Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis cupiditate perspiciatis animi quibusdam adipisci. Necessitatibus, non repellat. Culpa, atque veritatis. Voluptatem maxime at perferendis, porro pariatur neque distinctio odio minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, corporis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, natus! Qui maiores cumque obcaecati adipisci nulla error ex animi repellat. <span>-josh behrandoff</span></div>
                 <div class="testimonial-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio rem tenetur sequi et provident est debitis aspernatur in accusantium veritatis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi labore iusto vitae autem consequuntur asperiores atque distinctio accusantium libero exercitationem dolores quo voluptas veniam expedita ad nesciunt soluta error harum temporibus a animi, ex illo modi. Natus possimus, hic, nesciunt qui, voluptas vel illum libero neque odio omnis autem molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, minima? <span>-albert dio</span></div>
                 <div class="testimonial-card">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam doloribus animi mollitia sint tempore. Dicta sequi nam expedita suscipit autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aperiam voluptatibus sint praesentium facilis eius nobis laboriosam ipsam sunt fugit, culpa libero hic porro quo quia necessitatibus distinctio vitae id nesciunt illum nulla veniam molestiae! Sapiente, atque magni? Eaque nihil fugit harum excepturi fuga, et architecto, eligendi debitis porro tenetur alias. Quo libero alias voluptatum cumque, nam eligendi ratione aspernatur. <span>-john marcus</span></div>
             </div>
@@ -164,8 +170,8 @@
     
      <div class="content">
          <div class="form">
-            <span>  you can message me</span>
-            <form action="thanks.html">
+            <span class="sub-heading">  you can message me <i class="icofont-ui-messaging"></i></span>
+            <form action="mailto:arvindersingh8002@gmail.com">
                 <input type="text" name="uName" placeholder="Your Name" required>
                 <input type="email" name="uEmail"   placeholder="Your Email" required>
                 <textarea name="message" cols="30" rows="10" required  placeholder="Message"></textarea>
@@ -173,20 +179,19 @@
             </form>
          </div>
          <div class="others">
-             <span>You Can Also Find Me On</span>
+             <span class="sub-heading">You Can Find Me On</span>
              <div class="contactBox">
-                <div>instagram
+                <div><i class="icofont-instagram"></i>instagram
                     <span class="link">www.instagram.com/arvinder</span>
                 </div>
-                <div>facebook
+                <div><i class="icofont-facebook"></i>facebook
                     <span class="link">www.facebbok.com/arvinder</span>
                 </div>
-                <div>discord
+                <div><i class="icofont-disc"></i>discord
                     <span class="link">www.discord.com/arvinder</span>
                 </div>
-                <div>email
+                <div><i class="icofont-email"></i>email
                     <span class="link">arvindersingh@gmail.com </span>
-                </span>
              </div>
              
          </div>

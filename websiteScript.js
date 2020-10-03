@@ -8,6 +8,7 @@ const lines = document.querySelector('.lines');
 const line = lines.querySelector('.line');
 const background = document.querySelector('.background');
 const ul = document.querySelector('header .nav ul');
+const lis = ul.querySelectorAll('li');
 const cards = document.querySelectorAll('#services .card');
 
 //storing the previos theme settings
@@ -23,12 +24,12 @@ if(location.reload)
 
 //setting the theme of the website
 defaultButton.addEventListener('click',()=>{
-    root.style.setProperty('--gradientColor1','rgba(201, 130, 0, 0.822)');
+    root.style.setProperty('--gradientColor1','rgba(201, 130, 0, 1)');
     root.style.setProperty('--gradientColor2','rgba(228, 186, 96, 0.678)');
     root.style.setProperty('--textColor','rgb(51, 31, 4)');
     root.style.setProperty('--footerBackground','rgba(158, 103, 0, 0.922)');
 
-    localStorage.setItem('--gradientColor1','rgba(201, 130, 0, 0.822)');
+    localStorage.setItem('--gradientColor1','rgba(201, 130, 0, 1)');
     localStorage.setItem('--gradientColor2','rgba(228, 186, 96, 0.678)');
     localStorage.setItem('--textColor','rgb(51, 31, 4)');
     localStorage.setItem('--footerBackground','rgba(158, 103, 0, 0.922)');
@@ -37,12 +38,12 @@ defaultButton.addEventListener('click',()=>{
 });
 
 darkButton.addEventListener('click',()=>{
-  root.style.setProperty('--gradientColor1','rgba(0, 0, 0, 0.945)');
+  root.style.setProperty('--gradientColor1','rgba(0, 0, 0, 1)');
   root.style.setProperty('--gradientColor2','rgba(29, 26, 26, 0.781)');
   root.style.setProperty('--textColor','wheat');
   root.style.setProperty('--footerBackground','rgba(22, 21, 21, 0.945)');
   
-  localStorage.setItem('--gradientColor1','rgba(0, 0, 0, 0.945)');
+  localStorage.setItem('--gradientColor1','rgba(0, 0, 0, 1)');
   localStorage.setItem('--gradientColor2','rgba(29, 26, 26, 0.781)');
   localStorage.setItem('--textColor','wheat');
   localStorage.setItem('--footerBackground','rgba(22, 21, 21, 0.945)');  
@@ -71,11 +72,13 @@ const type = ()=>{
 
   if(currentText.length === currentLetter.length)
   {
-    index = 0;
-    count++;
-  }  
+      index = 0;
+      count++;
+
+  }
+    
 }
-setInterval(type,400);
+  setTimeout(()=>{ setInterval(type,350) },1300);
 
 //setting the responsive navigation
 function expand(){
@@ -88,5 +91,8 @@ function expand(){
 }
 
 lines.addEventListener('click',expand);
+for(let i = 0; i < (lis.length-1); i++) {
+  lis[i].addEventListener('click',expand);
 
-//rotating all cards according the card hovered in sevices section
+}
+

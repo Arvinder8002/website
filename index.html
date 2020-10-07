@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potfolio website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@450&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="icofont/icofont.min.css">
     <link rel="stylesheet" href="webstiteStyle.css">
     <script src="websiteScript.js" defer></script>
@@ -15,20 +16,22 @@
           <h4>LOADING..</h4>
       </div>
     </div>
-   
+    <div class="slider">
+    </div>
     <!-- header of the website -->
     <header id="home">
-        <div class="nav">
+        <nav>
             <span>Portfolio</span>
             <ul>
-                <li><a href="">works</a></li>
-               <li><a href="">services</a></li>
-               <li><a href="#contact">testimonial</a></li>
+                <li><a href="#work">works</a></li>
+               <li><a href="#services">services</a></li>
+               <li><a href="#testimonial">testimonial</a></li>
                 <li><a href="#about">about</a></li>
                 <li><a href="#contact">contact</a></li>
                 <li id="theme"> theme
                     <div class="dropdown">
-                        <span id="default">default</span><span id="dark">dark</span>
+                        <span id="default">Default</span>
+                        <span id="dark">Dark</span>
                     </div>
                 </li>
             </ul>
@@ -36,23 +39,78 @@
                 <div class="line"></div>
             </div>
             <div class="background"></div>
-        </div>
-
-        <div class="intro">
-           
+        </nav>
+        <div class="intro-container">
+            <div class="intro">
                 My name is <br><span>Arvinder Singh</span>
                <br> I work as <h5 class="typing"></h5><br>
-                <a href="#about">about me</a>  <a href="#works">works</a>
-    </div>
+                <a href="#about">about me</a>  <a href="#work">works</a>
+            </div>
+
+            <div class="intro-image">
+                <i class="icofont-code-alt"></i>
+            </div>
+         </div>
     </header>
+    <section id="work">
+        <div class="heading">
+            <h3 id="work-heading">here's some of my recent works</h3>
+        </div>
+        <div class="content">
+            <div class="works">
+                <div class="works__img">
+                    <img src="workImage1.jpg" alt="">
+                </div>
+                <div class="works__text">
+                    <h2>Responsive website</h2>
+                   <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nemo harum rerum quam, vel atque odit quas dignissimos labore cupiditate, veritatis aut! Ratione, quaerat vitae. Aliquam neque harum ipsa sint, iusto adipisci veritatis voluptatem cum id numquam tenetur! Consequatur ea autem consequuntur officia repudiandae, excepturi dolore. Magni ipsam consequatur vel?</p>
+                   <a href="#nowhere">Read More</a>
+                </div>
+            </div>
+            <div class="works">
+                <div class="works__text">
+                    <h2>Mobile App</h2>
+                   <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nemo harum rerum quam, vel atque odit quas dignissimos labore cupiditate, veritatis aut! Ratione, quaerat vitae. Aliquam neque harum ipsa sint, iusto adipisci veritatis voluptatem cum id numquam tenetur! Consequatur ea autem consequuntur officia repudiandae, excepturi dolore. Magni ipsam consequatur vel?</p>
+                   <a href="#nowhere">Read More</a>
+
+                </div>
+                <div class="works__img">
+                    <img src="workImage2.jpg" alt="">
+                </div>
+            </div>
+            <div class="works">
+                <div class="works__img">
+                    <img src="workImage3.jpg" alt="">
+                </div>
+                <div class="works__text">
+                    <h2>Canvas work</h2>
+                   <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nemo harum rerum quam, vel atque odit quas dignissimos labore cupiditate, veritatis aut! Ratione, quaerat vitae. Aliquam neque harum ipsa sint, iusto adipisci veritatis voluptatem cum id numquam tenetur! Consequatur ea autem consequuntur officia repudiandae, excepturi dolore. Magni ipsam consequatur vel?</p>
+                   <a href="#nowhere">Read More</a>
+
+                </div>
+            </div>
+            <div class="works">
+                <div class="works__text">
+                    <h2>Recent photography</h2>
+                  <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nemo harum rerum quam, vel atque odit quas dignissimos labore cupiditate, veritatis aut! Ratione, quaerat vitae. Aliquam neque harum ipsa sint, iusto adipisci veritatis voluptatem cum id numquam tenetur! Consequatur ea autem consequuntur officia repudiandae, excepturi dolore. Magni ipsam consequatur vel?</p>
+                  <a href="#nowhere">Read More</a>
+
+                </div>
+                <div class="works__img">
+                    <img src="workImage4.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!-- scroll to the top button -->
     <div id="scrollToTop">
-        <a href="#home"> <span>&#8593;</span></a> 
+        <a href="#home"> <i class="icofont-hand-up"></i></a> 
     </div>
     <!-- about me section -->
     <section id="about"> 
         <div class="heading">
-            <h3>about me</h3>
+            <h3 id="about-heading">about me</h3>
         </div>
       <div class="content">
           <div class="imgbox">
@@ -68,8 +126,8 @@
     <!-- services section -->
     <section id="services">
         <div class="heading">
-            <h3>services i provide</h3>
-            <p>all your needs will be taken care of</p>
+            <h3 id="services-heading">services i provide</h3>
+            <p id="services-para">all your needs will be taken care of</p>
         </div>
         <div class="content">
                 <div class="card">
@@ -151,31 +209,59 @@
             </div>
         
     </section>
+
+    <!-- testimonial section  -->
     <section id="testimonial">
             <div class="heading">
-                <h3>here's what my recent clients think of me</h3>
+                <h3 id="testimonial-heading">what my clients think of me</h3>
             </div>
             <div class="content">
-                <div class="testimonial-card"> Temporibus vitae libero fugiat sunt explicabo veritatis odio labore tenetur nostrum Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis cupiditate perspiciatis animi quibusdam adipisci. Necessitatibus, non repellat. Culpa, atque veritatis. Voluptatem maxime at perferendis, porro pariatur neque distinctio odio minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, corporis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, natus! Qui maiores cumque obcaecati adipisci nulla error ex animi repellat. <span>-josh behrandoff</span></div>
-                <div class="testimonial-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio rem tenetur sequi et provident est debitis aspernatur in accusantium veritatis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi labore iusto vitae autem consequuntur asperiores atque distinctio accusantium libero exercitationem dolores quo voluptas veniam expedita ad nesciunt soluta error harum temporibus a animi, ex illo modi. Natus possimus, hic, nesciunt qui, voluptas vel illum libero neque odio omnis autem molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, minima? <span>-albert dio</span></div>
-                <div class="testimonial-card">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam doloribus animi mollitia sint tempore. Dicta sequi nam expedita suscipit autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aperiam voluptatibus sint praesentium facilis eius nobis laboriosam ipsam sunt fugit, culpa libero hic porro quo quia necessitatibus distinctio vitae id nesciunt illum nulla veniam molestiae! Sapiente, atque magni? Eaque nihil fugit harum excepturi fuga, et architecto, eligendi debitis porro tenetur alias. Quo libero alias voluptatum cumque, nam eligendi ratione aspernatur. <span>-john marcus</span></div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="testimonial-img1.svg" alt="img">
+                    </div>
+                    <p> Temporibus vitae libero fugiat sunt explicabo veritatis odio labore tenetur nostrum Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis cupiditate perspiciatis animi quibusdam adipisci. Necessitatibus, non repellat. Culpa, atque veritatis. Voluptatem .</p> <h4>Josh Behrandoff</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img" id="second-img">
+                    <img src="testimonial-img3.svg" alt="">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio rem tenetur sequi et provident est debitis aspernatur in accusantium veritatis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi labore iusto vitae autem consequuntur asperiores atque distinctio  </p><h4>Albert Dio</h4></div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                    <img src="testimonial-img2.svg" alt="">
+                    </div>
+                     <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam doloribus animi mollitia sint tempore. Dicta sequi nam expedita suscipit autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aperiam voluptatibus sint praesentium facilis eius nobis laboriosam . </p><h4>John Marcus</h4></div>
             </div>
     </section>
     <!-- footer of the website -->
     <footer id="contact">
         <div class="heading">
-            <h3>contact me</h3>
-            <p>If you like my work then you can approach me</p>
+            <h3 id="contact-heading">contact me</h3>
+            <p id="contact-para">If you like my work then you can approach me</p>
         </div>
     
      <div class="content">
          <div class="form">
             <span class="sub-heading">  you can message me <i class="icofont-ui-messaging"></i></span>
             <form action="mailto:arvindersingh8002@gmail.com">
-                <input type="text" name="uName" placeholder="Your Name" required>
-                <input type="email" name="uEmail"   placeholder="Your Email" required>
-                <textarea name="message" cols="30" rows="10" required  placeholder="Message"></textarea>
+                <div class="name">
+                    <input type="text" name="uName"  required>
+                    <span>Your Name</span>
+                </div>
+                <div class="email">
+                    <input type="email" name="uEmail"   required>
+                    <span>Your Email</span>
+
+                </div>
+                <div class="message">
+                    <textarea name="message" cols="30" rows="10" required  ></textarea>
+                    <span>Your Message</span>
+
+                </div>
+                <div class="submit">
                 <input type="submit" value="Send">
+            </div>
             </form>
          </div>
          <div class="others">

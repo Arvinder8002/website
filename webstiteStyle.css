@@ -15,12 +15,14 @@
 
 body{
     overflow-x: hidden;
+    cursor: none;
 }
 
 a{
     text-decoration: none;
     color: var(--textColor);
     transition: 0.3s;
+    cursor: none;
 }
 
 /* finished working with global settings */
@@ -32,56 +34,50 @@ a{
     width: 100%;
     z-index: 20;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--gradientColor1);
-    animation: up 1s forwards 1.78s ;
+    animation: loader-animation 1s forwards 1.88s ;
 }
-.loader .bar{
-    height: 50px;
-    width: 60%;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--textColor);
-    color: var(--textColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    background-color: rgb(199, 197, 197);
-    font-family: 'Courier New', Courier, monospace;
+.loader h2{
+font-size: 45px;
+margin:5px 0;
+overflow: hidden;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.loader .bar::after{
-    content:'';
-    position: absolute;
-    left: -100%;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    mix-blend-mode: difference;
-    animation:loading 1s forwards 0.2s cubic-bezier(.76,.17,.45,.63);
+.loader h2 span{
+    display:block;
+    transform: translateY(100%);
+    animation: text-reveal 0.6s forwards 0.28s;
+}
+.loader h2 span#second-text{
+    animation-delay: 0.45s;
+}
+.loader h2 span#third-text{
+    animation-delay: 0.73s;
 }
 .slider{
     position: fixed;
     top: 0;
     left: 0;
     z-index: 20;
-    height: 120vh;
+    height: 110vh;
     width: 100%;
     background-color: rgb(150, 95, 14);
     transform: translateY(100%);
-    animation: slideup 1.15s forwards 1.5s;
+    animation: slider-animation 1s forwards 1.6s;
 }
-@keyframes loading{
+@keyframes text-reveal{
     from{
-        left:-100%;
+        transform: translateY(100%);
     }
     to{
-        left: 0%;
+        transform: translateY(0%);
     }
 }
 
-@keyframes up{
+@keyframes loader-animation{
     0%{
         transform: translateY(0);
         /* clip-path: inset(0 0 0 0) */
@@ -93,7 +89,7 @@ a{
     }
 }
 
-@keyframes slideup{
+@keyframes slider-animation{
     from{
         transform: translateY(100%);
     }
@@ -101,10 +97,56 @@ a{
         transform: translateY(-100%);
     }
 }
+/* cursor styling */
+#cursor{
+    position:fixed;
+    top: -100%;
+    left:-100%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    height:20px;
+    width:20px;
+    border:2px solid var(--textColor);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 0.2s;
+    transition-property: height,width,opacity;
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    -moz-backdrop-filter: blur(7px);
+}
+#cursor.mouse-enter{
+    height: 40px;
+    /* width:120px; */
+    z-index: 2;
+    background:var(--textColor);
+}
+
+/* bubbles styling */
+particle{
+    position: absolute;
+    z-index: 50;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    animation: animate 0.7s ease forwards;
+    --lastX:0;
+    --lastY:0;
+}
+@keyframes animate{
+
+  40%{
+      opacity: 1;
+  }
+    100%{
+        transform: translate(var(--lastX),var(--lastY));
+        opacity: 0;
+    }
+}
 /* header of the website */
 header{
 min-height:100vh;
-background-image:linear-gradient(135deg,var(--gradientColor1) 30%,var(--gradientColor2)), url(background.jpeg);
+background:var(--gradientColor1);
 background-size: cover;
 padding-top: 10px;
 display:flex;
@@ -114,6 +156,7 @@ position: relative;
 }
 header .intro-container{
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-around;
     align-items: center;
     flex-grow: 1;
@@ -194,19 +237,20 @@ header nav ul{
 }
 
 header nav ul li{
-    
+    position: relative;
+    z-index: 3;
     text-transform: capitalize;
     font-size: 20px;
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
-    padding:5px 10px;
     opacity: 0;
     text-align: center;
     animation: fade 0.8s ease-in forwards 2.3s;
 }
+header nav a{
+    padding:5px 18px;
+    border-radius: 5px;
 
-header li:hover a{
-    text-shadow: 2.5px 2.5px 2px rgba(51, 31, 4, 0.651);
 }
 
 header nav .lines{
@@ -214,13 +258,12 @@ header nav .lines{
     height: 50px;
     width: 50px;
     margin-right: 3%;
-    cursor: pointer;
     border-radius: 50%;
     display: none;
     position: relative;
     transition: 0.4s;
     opacity: 0;
-    animation: fade 0.8s ease-in forwards 2.5s;
+    animation: fade 0.8s ease-in forwards 0.2s;
 
 }
 
@@ -260,7 +303,10 @@ header nav .line{
     margin-right: 4%;
     border-radius: 20px;
     position: relative;
-    transition: 0.5s;
+    transition: transform 0.5s;
+}
+header nav .line.line-mouse-enter,header nav .line.line-mouse-enter::after{
+    background-color: var(--gradientColor1);
 }
 
 header nav .line::after{
@@ -305,7 +351,6 @@ nav .dropdown  span{
     display: block;
     font-size: 16px;
     text-align: center;
-    cursor: pointer;
     opacity: 1;
     transition: 0.1s;
     color: rgb(58, 42, 12);
@@ -619,7 +664,27 @@ transform: translateX(-50%);
 #testimonial .testimonial-card p{
     order:1;
     font-size: 16px;
+    padding:8px;
+    position: relative;
 }
+#testimonial .testimonial-card p::before{
+   content: '\201C';
+   position: absolute;
+   top:-22px;
+   left:-17px;
+   font-size: 45px;
+   font-weight: bold;
+   color:var(--textColor);
+}
+#testimonial .testimonial-card p::after{
+    content: '\201D';
+    position: absolute;
+    bottom:-35px;
+    right:-17px;
+    font-size: 45px;
+    font-weight: bold;
+    color:var(--textColor);
+ }
 #testimonial .testimonial-card h4{
     font-size: 20px;
     margin-top: 70px;
@@ -637,19 +702,19 @@ footer{
     justify-content: space-between;
 }
 .heading{
-    height:100vh;
+    height:90vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     position: relative;
 }
 .heading h3{
     text-align: center;
     padding-top: 15px;
     color: var(--textColor);
-    font-size: 65px;
+    font-size: 48px;
     text-transform: capitalize;
     font-family: 'Courier New', Courier, monospace;
     position: sticky;
@@ -661,7 +726,7 @@ text-align: center;
 width: 100%;
 background-color: #fff;
 padding: 20px 0 45px 0;
-font-size: 32.5px;
+font-size: 25px;
 color: var(--textColor);
 position: sticky;
 top: 0;
@@ -761,10 +826,8 @@ footer .content form input,textarea{
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
-    
+    width: 100%; 
 }
-
 footer .content form input,textarea::placeholder{
     color:var(--textColor);
     font-size: 15px;
@@ -848,8 +911,11 @@ footer .quote i{
 
 
 /* responsive design */
-@media all and (max-width:900px)
+@media all and (max-width:990px)
 {
+    #cursor{
+        transition:none;
+    }
  header nav ul{
      position:fixed;
      z-index: 15;
@@ -863,13 +929,46 @@ footer .quote i{
  }
  header nav ul li{
      font-size: 28px;
+     transform: scale(0.9);
  }
+
  header nav ul.show{
     opacity: 1;
     pointer-events: all;  
-    transition: 0.5s;
-    transition-delay: 0.6s;
  }
+ header nav ul.show li{
+     opacity: 0;
+     margin:15px 0;
+    animation:uiScaleup 0.6s forwards;
+ }
+ header nav ul.show li:nth-child(1){
+    animation-delay: 0.6s; 
+ }
+ header nav ul.show li:nth-child(2){
+   animation-delay: 0.7s; 
+}
+header nav ul.show li:nth-child(3){
+    animation-delay: 0.8s; 
+ }
+ header nav ul.show li:nth-child(4){
+    animation-delay: 0.9s; 
+ }
+ header nav ul.show li:nth-child(5){
+    animation-delay: 1s; 
+ }
+ header nav ul.show li:nth-child(6){
+    animation-delay: 1.1s; 
+ }
+ @keyframes uiScaleup {
+    from{
+        transform: scale(0.5) ;
+        opacity: 1;
+    }
+    to{
+       transform: scale(1) ;
+       opacity: 1;
+    }
+}
  header nav .lines{
      display:block;
  }
@@ -883,4 +982,13 @@ footer .quote i{
     #work .works .works__text{
         order: 1;
     }
+}
+
+@media all and (max-width:840px){
+    header .intro-container .intro-image{
+        display:none;
+    }
+}
+input,span,textarea,input[type = submit]{
+    cursor: none;
 }

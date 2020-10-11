@@ -5,28 +5,23 @@
     --textColor:rgb(51, 31, 4);
     --footerBackground:rgb(158, 103, 0);
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-body{
-    overflow-x: hidden;
     cursor: none;
+    font-family: sans-serif;
 }
-
+body{
+     overflow-x: hidden;
+}
 a{
     text-decoration: none;
     color: var(--textColor);
-    transition: 0.3s;
-    cursor: none;
+    transition: 0.3s; 
 }
-
 /* finished working with global settings */
-
 /* loader screen */
 .loader{
     position: fixed;
@@ -76,19 +71,15 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         transform: translateY(0%);
     }
 }
-
 @keyframes loader-animation{
     0%{
         transform: translateY(0);
-        /* clip-path: inset(0 0 0 0) */
     }
     100%{
         transform: translateY(-100%);
-        /* clip-path: inset(50% 0% 50% 0%); */
         display: none;
     }
 }
-
 @keyframes slider-animation{
     from{
         transform: translateY(100%);
@@ -100,8 +91,8 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 /* cursor styling */
 #cursor{
     position:fixed;
-    top: -100%;
-    left:-100%;
+    top: -30%;
+    left:-30%;
     transform: translate(-50%,-50%);
     z-index: 1000;
     height:20px;
@@ -112,16 +103,12 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 0.2s;
     transition-property: height,width,opacity;
     backdrop-filter:blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    -moz-backdrop-filter: blur(7px);
 }
 #cursor.mouse-enter{
     height: 40px;
-    /* width:120px; */
     z-index: 2;
     background:var(--textColor);
 }
-
 /* bubbles styling */
 particle{
     position: absolute;
@@ -134,7 +121,6 @@ particle{
     --lastY:0;
 }
 @keyframes animate{
-
   40%{
       opacity: 1;
   }
@@ -147,12 +133,12 @@ particle{
 header{
 min-height:100vh;
 background:var(--gradientColor1);
+color: var(--textColor);
 background-size: cover;
 padding-top: 10px;
 display:flex;
 flex-direction: column;
 justify-content: space-between;
-position: relative;
 }
 header .intro-container{
     display: flex;
@@ -160,7 +146,6 @@ header .intro-container{
     justify-content: space-around;
     align-items: center;
     flex-grow: 1;
-    color: var(--textColor);
     opacity: 0;
     animation: fade 0.8s ease-in forwards 2.3s;
     }
@@ -180,7 +165,6 @@ header .intro-container .intro{
     font-size: 30px;
     padding:0 30px;
 }
-
 header .intro span{
     font-size: 45px;
     display:inline-block;
@@ -197,28 +181,21 @@ header .intro a{
     border:2px solid var(--textColor);
     background-color: transparent;
     color:var(--textColor);
-    text-transform: capitalize;
-    font-family: sans-serif;
 }
 header .intro a:hover{
-    
     background-color: var(--textColor);
-    color:var(--gradientColor1);
-    
+    color:var(--gradientColor1); 
 }
 header .intro h5{
     font-family: monospace;
     margin-left: 5px;
 }
-
 header nav{
     display:flex;
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    color: var(--textColor);
 }
-
 header nav > span{
     margin-left: 30px;
     font-size: 38px;
@@ -227,7 +204,6 @@ header nav > span{
     opacity: 0;
     animation: fade 0.8s ease-in forwards 2.3s;
 }
-
 header nav ul{
     display:flex;
     justify-content: space-evenly;
@@ -235,11 +211,9 @@ header nav ul{
     flex-grow: 0.3;
     list-style-type: none; 
 }
-
 header nav ul li{
     position: relative;
     z-index: 3;
-    text-transform: capitalize;
     font-size: 20px;
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
@@ -250,9 +224,7 @@ header nav ul li{
 header nav a{
     padding:5px 18px;
     border-radius: 5px;
-
 }
-
 header nav .lines{
     z-index: 12;
     height: 50px;
@@ -264,15 +236,12 @@ header nav .lines{
     transition: 0.4s;
     opacity: 0;
     animation: fade 0.8s ease-in forwards 0.2s;
-
 }
-
 header nav .lines.fixed{
 position: fixed;
 top: 10px;
 right: 0;
 }
-
 header nav .background{
     position: fixed;
     top: 7%;
@@ -284,14 +253,12 @@ header nav .background{
     transform: translate(-50%,-50%) scale(0);
     transition: 0.5s;
 }
-
 header nav  .background.expand{
     height:2200px;
     width: 2200px;
     background-color: var(--footerBackground);
     transform: translate(-50%,-50%) scale(1);
 }
-
 header nav .line{
     position: absolute;
     top: 58%;
@@ -308,7 +275,6 @@ header nav .line{
 header nav .line.line-mouse-enter,header nav .line.line-mouse-enter::after{
     background-color: var(--gradientColor1);
 }
-
 header nav .line::after{
     content:'';
     position: absolute;
@@ -318,23 +284,18 @@ header nav .line::after{
     background-color: var(--textColor);
     border-radius: 20px;
 }
-
 header nav .line.rotate{
     transform: translate(-50%,-50%) rotate(135deg);
 }
-
 header nav .line.rotate::after{
     content: '';
     transform-origin: bottom;
     transform: rotate(92deg) translateX(8.5px);
 }
-
 #theme{
-    cursor: pointer;
     position: relative;
     margin-right: 20px;    
 }
-
 nav .dropdown{
     width: 120px;
     position: absolute;
@@ -365,23 +326,19 @@ nav .dropdown  span{
 header .typing{
     position: relative;
 }
-
 header h5{
     display:inline;
     font-size: 29px;
 }
-
 header .typing::after{
     content: '';
     position: absolute;
-    top:0px;
     margin-left: 3px;
     height: 28px;
     width:2px;
     background-color: var(--textColor);
     animation:blink 1s infinite;
 }
-
 @keyframes blink{
 0%,100%{
 opacity: 0;
@@ -396,7 +353,6 @@ opacity: 0;
     opacity: 0;
 }
 }
-
 @keyframes fade{
    from{
        opacity: 0;
@@ -405,9 +361,7 @@ opacity: 0;
        opacity: 1;
    }
 }
-
 /* finished working with the header of the website */
-
 /* work section  */
 #work .works{
     width: 100%;
@@ -470,9 +424,7 @@ opacity: 0;
     display: inline-block;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding:5px 8px;
-    text-align: end;
     border-radius: 5px;
-    background-color: var();
     border:2px solid var(--textColor);
 }
 #work .works a:hover{
@@ -489,13 +441,12 @@ opacity: 0;
     width: 54px;
     background-color: wheat;
     border-radius: 50%;
-    box-shadow: 0 0 5px;
-    transition: 0.5s;  
+    box-shadow: 0 2px 5px;
+    transition: 0.5s;
+    opacity: 0.5;  
 }
-
 #scrollToTop i{
     font-size: 28px;
-    display: block;
     height: 100%;
     width: 100%;
     display:flex;
@@ -509,12 +460,11 @@ opacity: 0;
     top: 85%;
 }
 /* finished working with scroll to top button */
-
-
 /* about section setting */
 #about {
 padding: 0 35px;
 background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
+color:var(--textColor);
 }
 #about .imgbox{
     height: 300px;
@@ -525,26 +475,23 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
     min-width: 30%;
     margin-bottom: 10px;
 }
-
 #about .imgbox img{
     position: absolute;
     height: 100%;
     width: 100%;
 }
-
 #about .txtbox{
    padding:50px 20px;
    max-width: 70%;
 }
-
 #about .txtbox p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:var(--textColor);
     margin: 10px;
 }
 /* services section styling  */
 #services{
     padding:35px 100px;
+    color:var(--textColor);
 }
 #services .content{
     justify-content: space-around;
@@ -557,7 +504,6 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
     flex-shrink: 0;
     transition: 0.3s;
 }
-
 #services .card .face{
     position: absolute;
     top: 0;
@@ -590,7 +536,6 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
 #services .card .face.face1 h4{
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    text-transform: capitalize;
 }
 #services .card:hover .face.face1{
     transform:perspective(2000px) translateX(-100%) rotateY(-90deg);
@@ -623,17 +568,15 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
 /* testimonial section styling */
 #testimonial{
     padding:0 20px 40px 20px;
-    position: relative;
+    color:var(--textColor);
 }
-
-#testimonial .testimonial-card{
-  height:360px;
+#testimonial .content .testimonial-card{
+  height:390px;
   width: 350px;
-  border: 2px solid var(--textColor);
-  border-radius: 5px;
+  border-radius: 3px;
   background:white;
   margin: 90px 5px 40px 5px;
-  padding: 12px 20px;
+  padding: 18px 20px;
   font-size: 15.5px;
   text-align: justify;
   font-family:arial;
@@ -642,18 +585,67 @@ background: linear-gradient(135deg,var(--gradientColor2),var(--gradientColor1));
   justify-content: space-around;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
   position: relative;
-
 }
+#testimonial span{
+    position: absolute;
+    transition: 0.5s;
+}
+#testimonial span:nth-child(1){
+  top:0;
+  left:0;
+  width: 100%;
+  height:3px;
+  background-color: var(--textColor);
+  transform: translateX(-60%);
+}
+#testimonial .testimonial-card:hover span:nth-child(1){
+  transform: translateX(0%);
+}
+#testimonial span:nth-child(2){
+    top:0;
+    right:0;
+    width: 3px;
+    height:100%;
+    background-color: var(--textColor);
+    transform: translateY(60%);
+  }
+  #testimonial .testimonial-card:hover span:nth-child(2){
+      transform: translateY(0%);
+  }
+  #testimonial span:nth-child(3){
+    bottom:0;
+    right:0;
+    width: 100%;
+    height:3px;
+    background-color: var(--textColor);
+    transform: translateX(60%);
+  }
+  #testimonial .testimonial-card:hover span:nth-child(3){
+      transform: translateX(0%);
+  }
+  #testimonial span:nth-child(4){
+    bottom: 0;
+    left:0;
+    width: 3px;
+    height:100%;
+    background-color: var(--textColor);
+    transform: translateY(-60%);
+  }
+  #testimonial .testimonial-card:hover span:nth-child(4){
+      transform: translateY(0%);
+  }
 #testimonial  .testimonial-img{
-height: 170px;
-width:170px;
+height: 140px;
+width:140px;
 border-radius: 50%;
 overflow: hidden;
-position: absolute;
-top:-75px;
-left: 50%;
-transform: translateX(-50%);
+position: relative;
+box-shadow: 0 2px 2px;
+}
+#testimonial  .testimonial-img#second-img{
+    border: 4px solid #fff;
 }
 #testimonial  .testimonial-img img{
     position: absolute;
@@ -671,27 +663,21 @@ transform: translateX(-50%);
    content: '\201C';
    position: absolute;
    top:-22px;
-   left:-17px;
+   left:-10px;
    font-size: 45px;
    font-weight: bold;
-   color:var(--textColor);
 }
 #testimonial .testimonial-card p::after{
     content: '\201D';
     position: absolute;
     bottom:-35px;
-    right:-17px;
+    right:-10px;
     font-size: 45px;
     font-weight: bold;
-    color:var(--textColor);
  }
 #testimonial .testimonial-card h4{
     font-size: 20px;
-    margin-top: 70px;
     font-family: 'Piazzolla', serif;
-}
-#testimonial  .testimonial-card:hover{
-    transform: rotate(30deg);
 }
 /* footer styling */
 footer{
@@ -707,49 +693,39 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     position: relative;
 }
 .heading h3{
     text-align: center;
     padding-top: 15px;
-    color: var(--textColor);
     font-size: 48px;
-    text-transform: capitalize;
     font-family: 'Courier New', Courier, monospace;
     position: sticky;
     top: 0;
 }
-
 .heading p{
 text-align: center;
 width: 100%;
 background-color: #fff;
 padding: 20px 0 45px 0;
 font-size: 25px;
-color: var(--textColor);
 position: sticky;
 top: 0;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-
 .content{
     display:flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
-    color: var(--textColor);
     padding:20px;
 }
-
 footer .content form{
     display:flex;
     flex-direction: column;
     min-width: 60%;
     margin-top: 25px;
-
 } 
 footer .heading p{
     background-color: var(--footerBackground);
@@ -772,7 +748,6 @@ footer .content form div{
     height:35px;
     width:420px;
     margin: 5px 0 22px 0;
-
 }
 footer .content form div.message{
     height: 180px;
@@ -790,13 +765,11 @@ footer .content form div.message span{
     top:7%;
     transform: translateY(-7%);
 }
-
 footer .content form div input:focus + span ,
 footer .content form div input:valid + span{
     transform: translate(-10px,-37px);
     font-size:13px ;
 }
-
 footer form .message textarea:focus + span,
 footer form .message textarea:valid + span{
     transform: translate(-10px,-30px);
@@ -814,7 +787,6 @@ footer .content .sub-heading{
 footer .content  span{
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 footer .content form input,textarea{
     background-color: rgba(255, 255, 255,0.4);
     padding:10px 15px;
@@ -832,15 +804,12 @@ footer .content form input,textarea::placeholder{
     color:var(--textColor);
     font-size: 15px;
 }
-
 footer .content form input[type='submit']{
     width: 90px;
     height: 40px;
     align-self: center;
     background-color: rgb(97, 93, 85);
-    cursor: pointer;
 }
-
 footer .content form input[type='submit']:hover{
  background-color: violet;
  color:black
@@ -852,7 +821,6 @@ footer .others{
     justify-content: space-between;
     align-self: flex-start;
     margin-left:50px;
-
 }
 footer .others.slide-left{
 animation:slide-left 0.7s forwards;
@@ -906,14 +874,9 @@ footer .quote i{
     padding-right:60px;
 }
 /* finished working with footer styling */
-
-
-
-
 /* responsive design */
-@media all and (max-width:990px)
-{
-    #cursor{
+@media all and (max-width:990px){
+ #cursor{
         transition:none;
     }
  header nav ul{
@@ -925,20 +888,21 @@ footer .quote i{
      flex-direction: column;
      opacity: 0;
      pointer-events: none;
-     transition-delay: 0; 
  }
  header nav ul li{
      font-size: 28px;
+     margin:15px 0;
      transform: scale(0.9);
  }
-
+ header nav ul li a{
+     padding: 5px 18px;
+ }
  header nav ul.show{
     opacity: 1;
     pointer-events: all;  
  }
  header nav ul.show li{
      opacity: 0;
-     margin:15px 0;
     animation:uiScaleup 0.6s forwards;
  }
  header nav ul.show li:nth-child(1){
@@ -972,9 +936,15 @@ header nav ul.show li:nth-child(3){
  header nav .lines{
      display:block;
  }
-
 }
-
+@media all and (max-width:870px){
+    .heading h3{
+        font-size: 40px;
+    }
+    .heading p{
+        font-size: 30px;
+    }
+}
 @media all and (max-width:1110px){
     #work .works .works__img{
         order: 0;
@@ -983,12 +953,181 @@ header nav ul.show li:nth-child(3){
         order: 1;
     }
 }
-
-@media all and (max-width:840px){
+/* 740 done */
+@media all and (max-width:740px){
+    .loader h2{
+        font-size: 30px;
+    }
+    .heading h3{
+        font-size: 35px;
+    }
+    .heading p{
+        font-size: 22px;
+    }
+    header nav > span{
+        font-size:34px;
+    }
     header .intro-container .intro-image{
-        display:none;
+        display: none;
+    }
+    header .intro-container .intro{
+        margin: 20px 0 40px 0;
+        font-size: 25px;
+    }
+    header .intro span{
+        font-size: 38px;
+    }
+    header .intro h5{
+        font-size: 25px;
+    }
+    header .intro a{
+        padding: 3px 5px;
+    }
+    footer .content .sub-heading{
+        font-size: 20px;
+    }
+    header nav ul li{
+        font-size: 22px;
     }
 }
-input,span,textarea,input[type = submit]{
-    cursor: none;
+/* 740 done */
+/* 580 done */
+@media all and (max-width:580px){
+    #work .works .works__img{
+        height:300px;
+        flex-basis: 450px;
+    }
+    #work .works .works__text p{
+        font-size: 16px;
+    }
+    #testimonial .content .testimonial-card{
+       height:358px;
+       width:335px;
+       margin:30px 5px 40px 5px;
+    }
+    #testimonial .testimonial-card p{
+        font-size: 15px;
+    }
+    .heading h3{
+        font-size: 30px;
+    }
+    .heading p{
+        font-size: 18px;
+    }
+    #work .works .works__text h2{
+        font-size: 25px;
+    }
+    #work .works .works__text p{
+        font-size: 15px;
+    }
+    #services .card{
+        margin:6px 30px 25px 30px;
+    }
+    #contact .form{
+        margin:15px 0 20px 0;
+    }
+    #contact form div{
+        width:350px;
+    }
+    footer .content .sub-heading{
+        font-size: 17px;
+    }
+    footer .others div{
+        font-size: 20px;
+    }
 }
+/* 580 done */
+/* 500 done */
+@media all and (max-width:500px){
+    header nav > span{
+        font-size: 29px;
+    }
+    header .intro-container .intro{
+        font-size: 23px;
+    }
+    header .intro span{
+        font-size: 36px;
+    }
+    .heading h3{
+        font-size: 25px;
+    }  
+    .heading p{
+        font-size: 16px;
+    }
+    footer .quote{
+        font-size: 14px;
+    }
+    footer .quote i{
+        font-size: 15px;
+    }
+    footer .content .sub-heading{
+        font-size: 14.5px;
+    }
+    #work .works .works__img{
+        height: 265px;
+        flex-basis: 395px;
+    }
+    #work .works .works__text h2{
+        font-size: 22px;
+    }
+    #work .works .works__text p{
+        font-size: 14px;
+    }
+    #work .works a{
+        font-size: 14px;
+        padding:3px 5px;
+    }
+    #services .card{
+        height: 253px;
+        width: 216px;
+    }
+    #services .card .face.face2{
+        font-size: 13.5px;
+    }
+
+    #testimonial .testimonial-img{
+        height: 100px;
+        width: 100px;
+    }
+    #testimonial .content .testimonial-card{
+        height:330px;
+        width:300px;
+    }
+    #testimonial .testimonial-card p{
+        font-size: 13.5px;
+    }
+}
+/* 500 done */
+/* 420 done */
+@media all and (max-width:420px){
+    header nav > span {
+        font-size: 25px;
+    }
+    header .intro-container .intro {
+        font-size: 19px;
+    }
+    header .intro span {
+        font-size: 30px;
+    }
+    header .intro h5 {
+        font-size: 19px;
+    }
+    header .intro a{
+        font-size: 15.8px;
+    }
+    #work .works .works__img {
+        height: 228px;
+        flex-basis: 340px;
+    }
+    #contact form div {
+        width: 320px;
+    }
+    footer .others div {
+        font-size: 18px;
+    }
+    footer .quote {
+        font-size: 13px;
+    }
+}
+/* 420 done */
+

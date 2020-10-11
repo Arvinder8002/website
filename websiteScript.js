@@ -81,7 +81,7 @@ const type = ()=>{
 }
   setTimeout(()=>{ setInterval(type,350) },2300);
 
-//setting the responsive navigation
+//setting the hamburger navigation
 function expand(){
  background.classList.toggle('expand');
  ul.classList.toggle('show');
@@ -290,8 +290,12 @@ window.addEventListener('resize',()=>{
   if(innerWidth > 990){
     const navLinks = ul.querySelectorAll('a');
     navLinks.forEach( link=>{
-      link.style.padding = `5px 18px`;
-    })
+      link.style.padding = '5px 18px';
+    });
+    background.classList.remove('expand');
+    ul.classList.remove('show');
+    lines.classList.remove('fixed');
+    line.classList.remove('rotate');
   }
 })
 
